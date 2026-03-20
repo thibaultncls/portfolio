@@ -1,0 +1,61 @@
+import GlassCard from "./GlassCard";
+import SectionLabel from "./SectionLabel";
+import { accentMap, skillCategories } from "./portfolioData";
+
+export default function SkillsSection() {
+  return (
+    <section id="skills" className="relative bg-[#0d1c32] px-8 py-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-16 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <SectionLabel>Capabilities</SectionLabel>
+            <h2 className="text-4xl font-bold tracking-tight">
+              The Tech Ecosystem
+            </h2>
+          </div>
+          <p className="max-w-md text-[#c5c6cd]">
+            Leveraging modern tools to build efficient, scalable, and
+            user-centric applications across all platforms.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {skillCategories.map((category) => {
+            const accent = accentMap[category.accent];
+
+            return (
+              <GlassCard
+                key={category.title}
+                className="rounded-xl p-8 transition-all duration-300 hover:-translate-y-2"
+              >
+                <div
+                  className={`mb-6 flex h-12 w-12 items-center justify-center rounded-lg ${accent.bg}`}
+                >
+                  <span className={`text-xl ${accent.text}`}>
+                    {category.icon}
+                  </span>
+                </div>
+                <h3 className="mb-4 text-xl font-bold">{category.title}</h3>
+                <ul className="space-y-3 text-sm text-[#c5c6cd]">
+                  {category.items.map((item) => (
+                    <li key={item} className="flex items-center gap-2">
+                      <span
+                        className={`h-1.5 w-1.5 rounded-full ${
+                          category.accent === "primary"
+                            ? "bg-[#38debb]"
+                            : "bg-[#58d6f1]"
+                        }`}
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </GlassCard>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
