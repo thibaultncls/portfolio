@@ -50,25 +50,25 @@ export const accentMap: Record<Accent, AccentStyle> = {
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Frontend",
+    title: "Frontend Engineering",
     accent: "primary",
     icon: Monitor,
     items: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
   },
   {
-    title: "Backend",
+    title: "Backend & APIs",
     accent: "tertiary",
     icon: Database,
     items: ["Node.js", "Supabase", "Prisma ORM", "PostgreSQL"],
   },
   {
-    title: "Mobile",
+    title: "Mobile Development",
     accent: "primary",
     icon: Smartphone,
     items: ["Flutter", "Dart", "Offline-first Sync", "Local Auth"],
   },
   {
-    title: "Ecosystem",
+    title: "Tools & Infrastructure",
     accent: "tertiary",
     icon: Puzzle,
     items: [
@@ -82,14 +82,13 @@ export const skillCategories: SkillCategory[] = [
 
 export const projects: Project[] = [
   {
-    title: "FitTrack Pro",
+    title: "Strongly",
     description:
-      "A high-performance fitness mobile app built for professional athletes. Features offline-first sync, complex workout routines, and subscription integration via RevenueCat.",
-    tags: ["Flutter", "Supabase", "RevenueCat"],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBlcqo2YPhL5eJ7MXTHEJpNQE1rlwtDteMryYXK5MDB3XZCP2sp5iIpBndGoSq01mPrtcUd7f6_u3PUTU-Kx68TQbH6CWbgzsWE7IHsUwwYTufxfEPMxC2eGCj2k3lR1vhVjyRxtbOAFzZ7_eA9CKSnNRq6nhon7PdQzrLYZx7J24TXESmlljFqk36uVK4kmQXkmXcak-V5KWUMERIu4t9Vs8uFDmOX5uZQsSuYtMAH4R_qcFnlvKzoROwdFWPu0ig3F_EBYzKUljU",
+      "A premium fitness application designed to create, track, and optimize workouts. Built with an offline-first architecture, it features advanced workout templates, real-time synchronization, and a full subscription system powered by RevenueCat and Stripe. Focused on performance, scalability, and a high-end user experience.",
+    tags: ["Flutter", "Drift", "Supabase", "RevenueCat", "Node.js"],
+    image: "/images/mockup.png",
     imageAlt:
-      "Fitness mobile application showing workout metrics and progress charts",
+      "Strongly fitness app with workout tracking, templates and performance analytics",
     accent: "primary",
   },
   {
@@ -105,4 +104,3 @@ export const projects: Project[] = [
     reverse: true,
   },
 ];
-
