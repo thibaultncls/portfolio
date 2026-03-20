@@ -1,7 +1,10 @@
+import type { LucideIcon } from "lucide-react";
+import { Database, Monitor, Puzzle, Smartphone } from "lucide-react";
+
 export type SkillCategory = {
   title: string;
   accent: "primary" | "tertiary";
-  icon: string;
+  icon: LucideIcon;
   items: string[];
 };
 
@@ -49,25 +52,25 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Frontend",
     accent: "primary",
-    icon: "🌐",
+    icon: Monitor,
     items: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
   },
   {
     title: "Backend",
     accent: "tertiary",
-    icon: "🗄️",
+    icon: Database,
     items: ["Node.js", "Supabase", "Prisma ORM", "PostgreSQL"],
   },
   {
     title: "Mobile",
     accent: "primary",
-    icon: "📱",
+    icon: Smartphone,
     items: ["Flutter", "Dart", "Offline-first Sync", "Local Auth"],
   },
   {
     title: "Ecosystem",
     accent: "tertiary",
-    icon: "🧩",
+    icon: Puzzle,
     items: [
       "Stripe Payments",
       "RevenueCat",

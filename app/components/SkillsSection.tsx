@@ -22,6 +22,7 @@ export default function SkillsSection() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {skillCategories.map((category) => {
             const accent = accentMap[category.accent];
+            const Icon = category.icon;
 
             return (
               <GlassCard
@@ -31,9 +32,7 @@ export default function SkillsSection() {
                 <div
                   className={`mb-6 flex h-12 w-12 items-center justify-center rounded-lg ${accent.bg}`}
                 >
-                  <span className={`text-xl ${accent.text}`}>
-                    {category.icon}
-                  </span>
+                  <Icon className={`h-6 w-6 ${accent.text}`} />
                 </div>
                 <h3 className="mb-4 text-xl font-bold">{category.title}</h3>
                 <ul className="space-y-3 text-sm text-[#c5c6cd]">
