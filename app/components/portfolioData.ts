@@ -101,6 +101,6 @@ export const projects: Project[] = [
     imageAlt:
       "Modern car marketplace website with search filters and premium vehicle listings",
     accent: "tertiary",
-    reverse: true,
+    // reverse: true,
   },
 ];

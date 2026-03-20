@@ -1,5 +1,6 @@
 import GlassCard from "./GlassCard";
 import SectionLabel from "./SectionLabel";
+import { Github, Linkedin } from "lucide-react";
 
 export default function ContactSection() {
   return (
@@ -7,8 +8,12 @@ export default function ContactSection() {
       <div className="mx-auto max-w-4xl">
         <div className="mb-16 text-center">
           <SectionLabel>Connection</SectionLabel>
-          <h2 className="mb-6 text-4xl font-bold">Let&apos;s build something epic</h2>
-          <p className="text-[#c5c6cd]">Have a vision? I have the tools to make it a reality.</p>
+          <h2 className="mb-6 text-4xl font-bold">
+            Let&apos;s build something epic
+          </h2>
+          <p className="text-[#c5c6cd]">
+            Have a vision? I have the tools to make it a reality.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 gap-12 md:grid-cols-5">
@@ -63,9 +68,8 @@ export default function ContactSection() {
               <h4 className="mb-4 text-lg font-bold">Social Presence</h4>
               <div className="flex flex-col gap-4">
                 {[
-                  { label: "GitHub", icon: "</>" },
-                  { label: "LinkedIn", icon: "💼" },
-                  { label: "Twitter / X", icon: "@" },
+                  { label: "GitHub", icon: Github },
+                  { label: "LinkedIn", icon: Linkedin },
                 ].map((social) => (
                   <a
                     key={social.label}
@@ -73,7 +77,7 @@ export default function ContactSection() {
                     className="group flex items-center gap-4 text-[#c5c6cd] transition-colors hover:text-[#38debb]"
                   >
                     <span className="rounded-lg bg-[#112036] p-2 transition-colors group-hover:bg-[#38debb]/10">
-                      {social.icon}
+                      <social.icon className="h-4 w-4" />
                     </span>
                     <span>{social.label}</span>
                   </a>
@@ -85,9 +89,7 @@ export default function ContactSection() {
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#58d6f1]">
                 Location
               </p>
-              <p className="text-sm text-[#d6e3ff]">
-                Remote / San Francisco, CA
-              </p>
+              <p className="text-sm text-[#d6e3ff]">Remote / Pontivy, France</p>
             </GlassCard>
           </div>
         </div>
@@ -95,4 +97,3 @@ export default function ContactSection() {
     </section>
   );
 }
-
