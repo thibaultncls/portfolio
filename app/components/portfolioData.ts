@@ -92,15 +92,20 @@ export const projects: Project[] = [
     accent: "primary",
   },
   {
-    title: "AutoVault",
+    title: "Cookit",
     description:
-      "Premium car marketplace with lightning-fast search capabilities using Algolia. Built with an editorial layout to emphasize high-quality vehicle imagery and technical specs.",
-    tags: ["React", "Algolia", "Node.js"],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDZJCDxRwhvp6K1_M9p762g5vsgZgP6b0HtEyd6rl5P6k_nkiOOkIY743bLYLjU4chz26xoAhy5cET240K2SV4KjN_GaL7usMWjDb4UpLqVRLt-p0_5tDXCrrwi4FQCL8yIpOe0hK_KDbW7nqD9tWsSG4RNwru6iMRG69txQ4fYSydgh11Biun_i4tB3vNTsprZE0mYgEQr_t1zhW_eyb_v7tVY7-jy3MR6UB3cddjY1EV3Uh3Zz1lWz8teRHoqlzuiFjZrFotJGU8",
+      "A recipe web application built with React to deliver a clean, responsive, and intuitive cooking experience. Users can explore recipes through a modern interface designed with a strong focus on usability, performance, and frontend architecture.",
+    tags: [
+      "React",
+      "TypeScript",
+      "UI/UX",
+      "Responsive Design",
+      "Node.js",
+      "MySql",
+    ],
+    image: "/images/cookit.png",
     imageAlt:
-      "Modern car marketplace website with search filters and premium vehicle listings",
+      "Cookit React recipe application showcasing a modern and responsive cooking interface",
     accent: "tertiary",
-    // reverse: true,
   },
 ];
