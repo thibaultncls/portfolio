@@ -1,8 +1,49 @@
+"use client";
+
+import { Github, Linkedin, Loader2 } from "lucide-react";
+import { FormEvent, useState } from "react";
 import GlassCard from "./GlassCard";
 import SectionLabel from "./SectionLabel";
-import { Github, Linkedin } from "lucide-react";
 
 export default function ContactSection() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError(null);
+    setLoading(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        console.log("error", data.error);
+        setError(
+          typeof data.error === "string"
+            ? data.error
+            : "Erreur lors de l'envoi.",
+        );
+        return;
+      }
+      setSent(true);
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch {
+      setError("Impossible de joindre le serveur. Réessaie plus tard.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <section id="contact" className="bg-[#0d1c32] px-8 py-24">
       <div className="mx-auto max-w-4xl">
@@ -18,47 +59,112 @@ export default function ContactSection() {
 
         <div className="grid grid-cols-1 gap-12 md:grid-cols-5">
           <div className="md:col-span-3">
-            <form className="space-y-6">
+            <form
+              className="space-y-6"
+              onSubmit={handleSubmit}
+              aria-busy={loading}
+            >
+              {sent && (
+                <div
+                  role="status"
+                  className="rounded-md border border-[#38debb]/40 bg-[#38debb]/10 px-4 py-3 text-sm text-[#38debb]"
+                >
+                  Message sent — thank you, I will reply soon.
+                </div>
+              )}
+              {error && (
+                <div
+                  role="alert"
+                  className="rounded-md border border-red-400/40 bg-red-500/10 px-4 py-3 text-sm text-red-200"
+                >
+                  {error}
+                </div>
+              )}
+
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-[#c5c6cd]">
+                  <label
+                    htmlFor="contact-name"
+                    className="text-xs font-bold uppercase tracking-widest text-[#c5c6cd]"
+                  >
                     Name
                   </label>
                   <input
+                    id="contact-name"
                     type="text"
+                    name="name"
+                    value={name}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                      if (sent) setSent(false);
+                    }}
                     placeholder="John Doe"
-                    className="w-full rounded-md bg-[#010e24] p-4 text-[#d6e3ff] outline-none transition-all placeholder:text-slate-500 focus:ring-1 focus:ring-[#38debb]/30"
+                    required
+                    disabled={loading}
+                    className="w-full rounded-md bg-[#010e24] p-4 text-[#d6e3ff] outline-none transition-all placeholder:text-slate-500 focus:ring-1 focus:ring-[#38debb]/30 disabled:cursor-not-allowed disabled:opacity-60"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-[#c5c6cd]">
+                  <label
+                    htmlFor="contact-email"
+                    className="text-xs font-bold uppercase tracking-widest text-[#c5c6cd]"
+                  >
                     Email
                   </label>
                   <input
+                    id="contact-email"
                     type="email"
+                    name="email"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      if (sent) setSent(false);
+                    }}
                     placeholder="john@example.com"
-                    className="w-full rounded-md bg-[#010e24] p-4 text-[#d6e3ff] outline-none transition-all placeholder:text-slate-500 focus:ring-1 focus:ring-[#38debb]/30"
+                    required
+                    disabled={loading}
+                    className="w-full rounded-md bg-[#010e24] p-4 text-[#d6e3ff] outline-none transition-all placeholder:text-slate-500 focus:ring-1 focus:ring-[#38debb]/30 disabled:cursor-not-allowed disabled:opacity-60"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-[#c5c6cd]">
+                <label
+                  htmlFor="contact-message"
+                  className="text-xs font-bold uppercase tracking-widest text-[#c5c6cd]"
+                >
                   Message
                 </label>
                 <textarea
+                  id="contact-message"
+                  name="message"
                   rows={5}
+                  value={message}
+                  onChange={(e) => {
+                    setMessage(e.target.value);
+                    if (sent) setSent(false);
+                  }}
                   placeholder="How can I help you?"
-                  className="w-full rounded-md bg-[#010e24] p-4 text-[#d6e3ff] outline-none transition-all placeholder:text-slate-500 focus:ring-1 focus:ring-[#38debb]/30"
+                  required
+                  disabled={loading}
+                  className="w-full rounded-md bg-[#010e24] p-4 text-[#d6e3ff] outline-none transition-all placeholder:text-slate-500 focus:ring-1 focus:ring-[#38debb]/30 disabled:cursor-not-allowed disabled:opacity-60"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full rounded-md bg-gradient-to-r from-[#38debb] to-[#58d6f1] py-4 font-bold text-[#00382d] shadow-lg transition-transform active:scale-[0.98]"
+                disabled={loading}
+                className="flex w-full items-center justify-center gap-2 rounded-md bg-gradient-to-r from-[#38debb] to-[#58d6f1] py-4 font-bold text-[#00382d] shadow-lg transition-transform enabled:active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-70"
               >
-                Send Message
+                {loading ? (
+                  <>
+                    <Loader2 className="h-5 w-5 animate-spin" aria-hidden />
+                    Envoi en cours…
+                  </>
+                ) : (
+                  "Send Message"
+                )}
               </button>
             </form>
           </div>
