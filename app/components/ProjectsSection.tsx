@@ -1,6 +1,6 @@
+import { accentMap, projects } from "../data/portfolioData";
 import GlassCard from "./GlassCard";
 import SectionLabel from "./SectionLabel";
-import { accentMap, projects } from "./portfolioData";
 
 export default function ProjectsSection() {
   return (
@@ -73,4 +73,3 @@ export default function ProjectsSection() {
     </section>
   );
 }
-

@@ -1,6 +1,6 @@
+import { accentMap, skillCategories } from "../data/portfolioData";
 import GlassCard from "./GlassCard";
 import SectionLabel from "./SectionLabel";
-import { accentMap, skillCategories } from "./portfolioData";
 
 export default function SkillsSection() {
   return (
@@ -57,4 +57,3 @@ export default function SkillsSection() {
     </section>
   );
 }
-
