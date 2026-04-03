@@ -60,7 +60,9 @@ export default function ProjectsSection() {
                   ))}
                 </div>
                 <a
-                  href="#"
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`inline-flex items-center gap-2 font-bold transition-all hover:gap-4 ${accent.text}`}
                 >
                   View project <span className="text-sm">↗</span>

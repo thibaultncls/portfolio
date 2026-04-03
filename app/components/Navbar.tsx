@@ -6,7 +6,7 @@ export default function Navbar() {
           href="#hero"
           className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-xl font-extrabold tracking-tight text-transparent"
         >
-          DevPortfolio
+          Thibault NICOLAS' Portfolio
         </a>
 
         <div className="hidden items-center gap-8 tracking-tight md:flex">
@@ -46,4 +46,3 @@ export default function Navbar() {
     </nav>
   );
 }
-

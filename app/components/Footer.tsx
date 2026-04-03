@@ -18,12 +18,6 @@ export default function Footer() {
           >
             LinkedIn
           </a>
-          <a
-            href="#"
-            className="text-slate-500 underline underline-offset-8 opacity-80 transition-all hover:text-cyan-300 hover:opacity-100"
-          >
-            Source Code
-          </a>
         </div>
       </div>
     </footer>

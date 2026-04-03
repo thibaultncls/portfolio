@@ -16,6 +16,7 @@ export type Project = {
   imageAlt: string;
   accent: "primary" | "tertiary";
   reverse?: boolean;
+  link?: string;
 };
 
 export type Accent = "primary" | "tertiary";
@@ -84,8 +85,15 @@ export const projects: Project[] = [
   {
     title: "Strongly",
     description:
-      "A premium fitness application designed to create, track, and optimize workouts. Built with an offline-first architecture, it features advanced workout templates, real-time synchronization, and a full subscription system powered by RevenueCat and Stripe. Focused on performance, scalability, and a high-end user experience.",
-    tags: ["Flutter", "Drift", "Supabase", "RevenueCat", "Node.js"],
+      "A premium fitness application designed to create, track, and optimize workouts. Built with an offline-first architecture, it features advanced workout templates, real-time synchronization, and a full subscription system powered by RevenueCat. Focused on performance, scalability, and a high-end user experience.",
+    tags: [
+      "Flutter",
+      "Drift",
+      "Supabase",
+      "RevenueCat",
+      "Node.js",
+      "Architecture",
+    ],
     image: "/images/mockup.png",
     imageAlt:
       "Strongly fitness app with workout tracking, templates and performance analytics",
@@ -107,5 +115,17 @@ export const projects: Project[] = [
     imageAlt:
       "Cookit React recipe application showcasing a modern and responsive cooking interface",
     accent: "tertiary",
+    link: "https://gitlab.com/tibo_ncls/recipe-app-front",
+  },
+  {
+    title: "Muscle Track",
+    description:
+      "A mobile application built with Flutter to track your muscle progress. It allows you to add your exercises, sets, and reps, and to see your progress over time.",
+    tags: ["Flutter", "SQLite", "Provider", "Mobile", "IOS deployments"],
+    image: "/images/muscle-track.png",
+    imageAlt:
+      "Muscle Track mobile application showcasing a modern and responsive muscle tracking interface",
+    accent: "tertiary",
+    link: "https://apps.apple.com/fr/app/muscle-track/id6503449485",
   },
 ];
