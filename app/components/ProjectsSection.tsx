@@ -1,3 +1,5 @@
+import { ArrowUpRight } from "lucide-react";
+
 import { accentMap, projects } from "../data/portfolioData";
 import GlassCard from "./GlassCard";
 import SectionLabel from "./SectionLabel";
@@ -65,7 +67,7 @@ export default function ProjectsSection() {
                   rel="noopener noreferrer"
                   className={`inline-flex items-center gap-2 font-bold transition-all hover:gap-4 ${accent.text}`}
                 >
-                  View project <span className="text-sm">↗</span>
+                  View project <ArrowUpRight className="h-4 w-4" />
                 </a>
               </GlassCard>
             </div>
