@@ -7,13 +7,15 @@ export default function Footer() {
         </div>
         <div className="flex gap-8 text-sm uppercase tracking-widest">
           <a
-            href="#"
+            href="https://github.com/thibaultncls"
+            target="_blank"
             className="text-slate-500 underline underline-offset-8 opacity-80 transition-all hover:text-cyan-300 hover:opacity-100"
           >
             GitHub
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/thibault-nicolas-5310202ab/"
+            target="_blank"
             className="text-slate-500 underline underline-offset-8 opacity-80 transition-all hover:text-cyan-300 hover:opacity-100"
           >
             LinkedIn

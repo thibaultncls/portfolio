@@ -174,12 +174,21 @@ export default function ContactSection() {
               <h4 className="mb-4 text-lg font-bold">Social Presence</h4>
               <div className="flex flex-col gap-4">
                 {[
-                  { label: "GitHub", icon: Github },
-                  { label: "LinkedIn", icon: Linkedin },
+                  {
+                    label: "GitHub",
+                    icon: Github,
+                    href: "https://github.com/thibaultncls",
+                  },
+                  {
+                    label: "LinkedIn",
+                    icon: Linkedin,
+                    href: "https://www.linkedin.com/in/thibault-nicolas-5310202ab/",
+                  },
                 ].map((social) => (
                   <a
                     key={social.label}
-                    href="#"
+                    href={social.href}
+                    target="_blank"
                     className="group flex items-center gap-4 text-[#c5c6cd] transition-colors hover:text-[#38debb]"
                   >
                     <span className="rounded-lg bg-[#112036] p-2 transition-colors group-hover:bg-[#38debb]/10">
