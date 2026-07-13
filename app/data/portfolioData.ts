@@ -54,19 +54,34 @@ export const skillCategories: SkillCategory[] = [
     title: "Frontend Engineering",
     accent: "primary",
     icon: Monitor,
-    items: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
+    items: ["React", "TypeScript", "Tailwind CSS", "Next.js", "WordPress"],
   },
   {
     title: "Backend & APIs",
     accent: "tertiary",
     icon: Database,
-    items: ["Node.js", "Supabase", "Prisma ORM", "PostgreSQL"],
+    items: [
+      "Node.js",
+      "Supabase",
+      "Prisma ORM",
+      "PostgreSQL",
+      "PHP",
+      "MySql",
+      "Symfony",
+    ],
   },
   {
     title: "Mobile Development",
     accent: "primary",
     icon: Smartphone,
-    items: ["Flutter", "Dart", "Offline-first Sync", "Local Auth"],
+    items: [
+      "Flutter",
+      "Dart",
+      "Offline-first Sync",
+      "Local Auth",
+      "Android",
+      "IOS",
+    ],
   },
   {
     title: "Tools & Infrastructure",
@@ -77,6 +92,8 @@ export const skillCategories: SkillCategory[] = [
       "RevenueCat",
       "Algolia Search",
       "GitHub Actions",
+      "Supabase",
+      "Firebase",
     ],
   },
 ];
@@ -98,6 +115,7 @@ export const projects: Project[] = [
     imageAlt:
       "Strongly fitness app with workout tracking, templates and performance analytics",
     accent: "primary",
+    link: "https://strongly-229ff.web.app/",
   },
   {
     title: "Cookit",
@@ -127,5 +145,23 @@ export const projects: Project[] = [
       "Muscle Track mobile application showcasing a modern and responsive muscle tracking interface",
     accent: "tertiary",
     link: "https://apps.apple.com/fr/app/muscle-track/id6503449485",
+  },
+  {
+    title: "Senior Bretagne",
+    description:
+      "A modern and accessible website designed for Conseils & Gestion, a company providing home accessibility solutions for seniors, including stairlifts, walk-in showers, and personal emergency systems. Built with WordPress and custom themes, it features a clean, responsive design and a focus on usability and accessibility.",
+    tags: [
+      "WordPress",
+      "Custom Themes",
+      "SEO",
+      "Accessibility",
+      "Performance",
+      "Responsive Design",
+    ],
+    image: "/images/senior-bretagne.png",
+    imageAlt:
+      "Senior Bretagne web application showcasing a modern and responsive website interface",
+    accent: "primary",
+    link: "https://senior-bretagne.fr/",
   },
 ];
