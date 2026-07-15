@@ -1,26 +1,29 @@
 import { ArrowUpRight } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
-import { accentMap, projects } from "../data/portfolioData";
+import { accentMap, projectMeta } from "../data/portfolioData";
 import GlassCard from "./GlassCard";
 import SectionLabel from "./SectionLabel";
 
-export default function ProjectsSection() {
+export default async function ProjectsSection() {
+  const t = await getTranslations("projects");
+
   return (
     <section id="projects" className="mx-auto max-w-7xl px-8 py-24">
       <SectionLabel>
-        <span className="block text-center">Portfolio</span>
+        <span className="block text-center">{t("label")}</span>
       </SectionLabel>
       <h2 className="mb-20 text-center text-4xl font-extrabold tracking-tight md:text-5xl">
-        Selected Artifacts
+        {t("title")}
       </h2>
 
       <div className="space-y-32">
-        {projects.map((project) => {
+        {projectMeta.map((project) => {
           const accent = accentMap[project.accent];
 
           return (
             <div
-              key={project.title}
+              key={project.id}
               className="group relative grid grid-cols-1 items-center gap-8 lg:grid-cols-12"
             >
               <div
@@ -33,7 +36,7 @@ export default function ProjectsSection() {
                 <GlassCard className="aspect-video overflow-hidden rounded-2xl">
                   <img
                     src={project.image}
-                    alt={project.imageAlt}
+                    alt={t(`items.${project.id}.imageAlt`)}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </GlassCard>
@@ -47,9 +50,11 @@ export default function ProjectsSection() {
                     : `lg:absolute lg:right-0 lg:col-span-6 ${accent.borderLeft}`,
                 ].join(" ")}
               >
-                <h3 className="mb-4 text-2xl font-bold">{project.title}</h3>
+                <h3 className="mb-4 text-2xl font-bold">
+                  {t(`items.${project.id}.title`)}
+                </h3>
                 <p className="mb-8 leading-relaxed text-[#c5c6cd]">
-                  {project.description}
+                  {t(`items.${project.id}.description`)}
                 </p>
                 <div className="mb-8 flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
@@ -67,7 +72,7 @@ export default function ProjectsSection() {
                   rel="noopener noreferrer"
                   className={`inline-flex items-center gap-2 font-bold transition-all hover:gap-4 ${accent.text}`}
                 >
-                  View project <ArrowUpRight className="h-4 w-4" />
+                  {t("viewProject")} <ArrowUpRight className="h-4 w-4" />
                 </a>
               </GlassCard>
             </div>

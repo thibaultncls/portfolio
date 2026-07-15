@@ -1,19 +1,25 @@
 import type { LucideIcon } from "lucide-react";
 import { Database, Monitor, Puzzle, Smartphone } from "lucide-react";
 
-export type SkillCategory = {
-  title: string;
+export type SkillCategoryId = "frontend" | "backend" | "mobile" | "tools";
+
+export type ProjectId =
+  | "strongly"
+  | "cookit"
+  | "muscleTrack"
+  | "seniorBretagne";
+
+export type SkillCategoryMeta = {
+  id: SkillCategoryId;
   accent: "primary" | "tertiary";
   icon: LucideIcon;
   items: string[];
 };
 
-export type Project = {
-  title: string;
-  description: string;
+export type ProjectMeta = {
+  id: ProjectId;
   tags: string[];
   image: string;
-  imageAlt: string;
   accent: "primary" | "tertiary";
   reverse?: boolean;
   link?: string;
@@ -49,15 +55,15 @@ export const accentMap: Record<Accent, AccentStyle> = {
   },
 };
 
-export const skillCategories: SkillCategory[] = [
+export const skillCategoryMeta: SkillCategoryMeta[] = [
   {
-    title: "Frontend Engineering",
+    id: "frontend",
     accent: "primary",
     icon: Monitor,
     items: ["React", "TypeScript", "Tailwind CSS", "Next.js", "WordPress"],
   },
   {
-    title: "Backend & APIs",
+    id: "backend",
     accent: "tertiary",
     icon: Database,
     items: [
@@ -71,7 +77,7 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: "Mobile Development",
+    id: "mobile",
     accent: "primary",
     icon: Smartphone,
     items: [
@@ -84,7 +90,7 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: "Tools & Infrastructure",
+    id: "tools",
     accent: "tertiary",
     icon: Puzzle,
     items: [
@@ -98,11 +104,9 @@ export const skillCategories: SkillCategory[] = [
   },
 ];
 
-export const projects: Project[] = [
+export const projectMeta: ProjectMeta[] = [
   {
-    title: "Strongly",
-    description:
-      "A premium fitness application designed to create, track, and optimize workouts. Built with an offline-first architecture, it features advanced workout templates, real-time synchronization, and a full subscription system powered by RevenueCat. Focused on performance, scalability, and a high-end user experience.",
+    id: "strongly",
     tags: [
       "Flutter",
       "Drift",
@@ -112,15 +116,11 @@ export const projects: Project[] = [
       "Architecture",
     ],
     image: "/images/mockup.png",
-    imageAlt:
-      "Strongly fitness app with workout tracking, templates and performance analytics",
     accent: "primary",
     link: "https://strongly-229ff.web.app/",
   },
   {
-    title: "Cookit",
-    description:
-      "A recipe web application built with React to deliver a clean, responsive, and intuitive cooking experience. Users can explore recipes through a modern interface designed with a strong focus on usability, performance, and frontend architecture.",
+    id: "cookit",
     tags: [
       "React",
       "TypeScript",
@@ -130,26 +130,18 @@ export const projects: Project[] = [
       "MySql",
     ],
     image: "/images/cookit.png",
-    imageAlt:
-      "Cookit React recipe application showcasing a modern and responsive cooking interface",
     accent: "tertiary",
     link: "https://gitlab.com/tibo_ncls/recipe-app-front",
   },
   {
-    title: "Muscle Track",
-    description:
-      "A mobile application built with Flutter to track your muscle progress. It allows you to add your exercises, sets, and reps, and to see your progress over time.",
+    id: "muscleTrack",
     tags: ["Flutter", "SQLite", "Provider", "Mobile", "IOS deployments"],
     image: "/images/muscle-track.png",
-    imageAlt:
-      "Muscle Track mobile application showcasing a modern and responsive muscle tracking interface",
     accent: "tertiary",
     link: "https://apps.apple.com/fr/app/muscle-track/id6503449485",
   },
   {
-    title: "Senior Bretagne",
-    description:
-      "A modern and accessible website designed for Conseils & Gestion, a company providing home accessibility solutions for seniors, including stairlifts, walk-in showers, and personal emergency systems. Built with WordPress and custom themes, it features a clean, responsive design and a focus on usability and accessibility.",
+    id: "seniorBretagne",
     tags: [
       "WordPress",
       "Custom Themes",
@@ -159,8 +151,6 @@ export const projects: Project[] = [
       "Responsive Design",
     ],
     image: "/images/senior-bretagne.png",
-    imageAlt:
-      "Senior Bretagne web application showcasing a modern and responsive website interface",
     accent: "primary",
     link: "https://senior-bretagne.fr/",
   },

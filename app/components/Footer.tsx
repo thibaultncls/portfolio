@@ -1,9 +1,13 @@
-export default function Footer() {
+import { getTranslations } from "next-intl/server";
+
+export default async function Footer() {
+  const t = await getTranslations("footer");
+
   return (
     <footer className="w-full border-t border-slate-800/20 bg-slate-950 py-12">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-8 md:flex-row">
         <div className="text-sm uppercase tracking-widest text-slate-500">
-          © 2025 Thibault NICOLAS.
+          {t("copyright")}
         </div>
         <div className="flex gap-8 text-sm uppercase tracking-widest">
           <a
