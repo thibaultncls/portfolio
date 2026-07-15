@@ -1,11 +1,24 @@
 "use client";
 
 import { Github, Linkedin, Loader2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { FormEvent, useState } from "react";
 import GlassCard from "./GlassCard";
 import SectionLabel from "./SectionLabel";
 
+const ERROR_KEYS = ["requiredFields", "invalidRequest", "serverError"] as const;
+
+function isKnownErrorKey(
+  value: unknown,
+): value is (typeof ERROR_KEYS)[number] {
+  return (
+    typeof value === "string" &&
+    ERROR_KEYS.includes(value as (typeof ERROR_KEYS)[number])
+  );
+}
+
 export default function ContactSection() {
+  const t = useTranslations("contact");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -25,11 +38,10 @@ export default function ContactSection() {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        console.log("error", data.error);
         setError(
-          typeof data.error === "string"
-            ? data.error
-            : "Erreur lors de l'envoi.",
+          isKnownErrorKey(data.error)
+            ? t(`errors.${data.error}`)
+            : t("errors.serverError"),
         );
         return;
       }
@@ -38,7 +50,7 @@ export default function ContactSection() {
       setEmail("");
       setMessage("");
     } catch {
-      setError("Impossible de joindre le serveur. Réessaie plus tard.");
+      setError(t("errors.serverError"));
     } finally {
       setLoading(false);
     }
@@ -48,13 +60,9 @@ export default function ContactSection() {
     <section id="contact" className="bg-[#0d1c32] px-8 py-24">
       <div className="mx-auto max-w-4xl">
         <div className="mb-16 text-center">
-          <SectionLabel>Connection</SectionLabel>
-          <h2 className="mb-6 text-4xl font-bold">
-            Let&apos;s build something epic
-          </h2>
-          <p className="text-[#c5c6cd]">
-            Have a vision? I have the tools to make it a reality.
-          </p>
+          <SectionLabel>{t("label")}</SectionLabel>
+          <h2 className="mb-6 text-4xl font-bold">{t("title")}</h2>
+          <p className="text-[#c5c6cd]">{t("subtitle")}</p>
         </div>
 
         <div className="grid grid-cols-1 gap-12 md:grid-cols-5">
@@ -69,7 +77,7 @@ export default function ContactSection() {
                   role="status"
                   className="rounded-md border border-[#38debb]/40 bg-[#38debb]/10 px-4 py-3 text-sm text-[#38debb]"
                 >
-                  Message sent — thank you, I will reply soon.
+                  {t("success")}
                 </div>
               )}
               {error && (
@@ -87,7 +95,7 @@ export default function ContactSection() {
                     htmlFor="contact-name"
                     className="text-xs font-bold uppercase tracking-widest text-[#c5c6cd]"
                   >
-                    Name
+                    {t("name")}
                   </label>
                   <input
                     id="contact-name"
@@ -98,7 +106,7 @@ export default function ContactSection() {
                       setName(e.target.value);
                       if (sent) setSent(false);
                     }}
-                    placeholder="John Doe"
+                    placeholder={t("namePlaceholder")}
                     required
                     disabled={loading}
                     className="w-full rounded-md bg-[#010e24] p-4 text-[#d6e3ff] outline-none transition-all placeholder:text-slate-500 focus:ring-1 focus:ring-[#38debb]/30 disabled:cursor-not-allowed disabled:opacity-60"
@@ -110,7 +118,7 @@ export default function ContactSection() {
                     htmlFor="contact-email"
                     className="text-xs font-bold uppercase tracking-widest text-[#c5c6cd]"
                   >
-                    Email
+                    {t("email")}
                   </label>
                   <input
                     id="contact-email"
@@ -121,7 +129,7 @@ export default function ContactSection() {
                       setEmail(e.target.value);
                       if (sent) setSent(false);
                     }}
-                    placeholder="john@example.com"
+                    placeholder={t("emailPlaceholder")}
                     required
                     disabled={loading}
                     className="w-full rounded-md bg-[#010e24] p-4 text-[#d6e3ff] outline-none transition-all placeholder:text-slate-500 focus:ring-1 focus:ring-[#38debb]/30 disabled:cursor-not-allowed disabled:opacity-60"
@@ -134,7 +142,7 @@ export default function ContactSection() {
                   htmlFor="contact-message"
                   className="text-xs font-bold uppercase tracking-widest text-[#c5c6cd]"
                 >
-                  Message
+                  {t("message")}
                 </label>
                 <textarea
                   id="contact-message"
@@ -145,7 +153,7 @@ export default function ContactSection() {
                     setMessage(e.target.value);
                     if (sent) setSent(false);
                   }}
-                  placeholder="How can I help you?"
+                  placeholder={t("messagePlaceholder")}
                   required
                   disabled={loading}
                   className="w-full rounded-md bg-[#010e24] p-4 text-[#d6e3ff] outline-none transition-all placeholder:text-slate-500 focus:ring-1 focus:ring-[#38debb]/30 disabled:cursor-not-allowed disabled:opacity-60"
@@ -160,10 +168,10 @@ export default function ContactSection() {
                 {loading ? (
                   <>
                     <Loader2 className="h-5 w-5 animate-spin" aria-hidden />
-                    Envoi en cours…
+                    {t("sending")}
                   </>
                 ) : (
-                  "Send Message"
+                  t("sendMessage")
                 )}
               </button>
             </form>
@@ -171,7 +179,7 @@ export default function ContactSection() {
 
           <div className="space-y-8 md:col-span-2">
             <div>
-              <h4 className="mb-4 text-lg font-bold">Social Presence</h4>
+              <h4 className="mb-4 text-lg font-bold">{t("socialPresence")}</h4>
               <div className="flex flex-col gap-4">
                 {[
                   {
@@ -202,9 +210,9 @@ export default function ContactSection() {
 
             <GlassCard className="rounded-xl border-l-2 border-l-[#58d6f1] p-6">
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#58d6f1]">
-                Location
+                {t("location")}
               </p>
-              <p className="text-sm text-[#d6e3ff]">Remote / Pontivy, France</p>
+              <p className="text-sm text-[#d6e3ff]">{t("locationValue")}</p>
             </GlassCard>
           </div>
         </div>

@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "title": "Thibault Nicolas",
+    "description": "Portfolio de Thibault Nicolas"
+  },
+  "navbar": {
+    "title": "Portfolio de Thibault NICOLAS",
+    "hero": "Accueil",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact",
+    "resume": "CV",
+    "resumeHref": "/cv-fr.pdf"
+  },
+  "hero": {
+    "badge": "Disponible pour de nouvelles opportunités",
+    "title": "Construire les expériences de <highlight>demain</highlight>",
+    "description": "Développeur Full-stack & Mobile, je conçois des solutions digitales haut de gamme avec un focus sur la performance, la scalabilité et le design éditorial.",
+    "ctaWork": "Voir mes projets",
+    "ctaContact": "Me contacter",
+    "imageAlt": "Visuel technologique abstrait avec circuits lumineux et réseau"
+  },
+  "skills": {
+    "label": "Compétences",
+    "title": "L'écosystème technique",
+    "subtitle": "Exploiter les outils modernes pour créer des applications efficaces, scalables et centrées utilisateur sur toutes les plateformes.",
+    "categories": {
+      "frontend": {
+        "title": "Frontend Engineering"
+      },
+      "backend": {
+        "title": "Backend & APIs"
+      },
+      "mobile": {
+        "title": "Développement Mobile"
+      },
+      "tools": {
+        "title": "Outils & Infrastructure"
+      }
+    }
+  },
+  "projects": {
+    "label": "Portfolio",
+    "title": "Projets sélectionnés",
+    "viewProject": "Voir le projet",
+    "items": {
+      "strongly": {
+        "title": "Strongly",
+        "description": "Une application fitness premium conçue pour créer, suivre et optimiser ses entraînements. Construite avec une architecture offline-first, elle propose des templates d'entraînement avancés, une synchronisation en temps réel et un système d'abonnement complet via RevenueCat. Orientée performance, scalabilité et expérience utilisateur haut de gamme.",
+        "imageAlt": "Application fitness Strongly avec suivi d'entraînement, templates et analytics de performance"
+      },
+      "cookit": {
+        "title": "Cookit",
+        "description": "Une application web de recettes construite avec React pour offrir une expérience culinaire claire, responsive et intuitive. Les utilisateurs explorent des recettes via une interface moderne pensée pour l'ergonomie, la performance et l'architecture frontend.",
+        "imageAlt": "Application de recettes Cookit en React, interface moderne et responsive"
+      },
+      "muscleTrack": {
+        "title": "Muscle Track",
+        "description": "Une application mobile Flutter pour suivre sa progression musculaire. Elle permet d'ajouter ses exercices, séries et répétitions, et de visualiser ses progrès dans le temps.",
+        "imageAlt": "Application mobile Muscle Track, interface moderne de suivi musculaire"
+      },
+      "seniorBretagne": {
+        "title": "Senior Bretagne",
+        "description": "Un site web moderne et accessible pour Conseils & Gestion, entreprise proposant des solutions d'accessibilité à domicile pour seniors : monte-escaliers, douches à l'italienne et systèmes d'alerte. Construit avec WordPress et thèmes sur mesure, il mise sur un design épuré, responsive, l'ergonomie et l'accessibilité.",
+        "imageAlt": "Site Senior Bretagne, interface web moderne et responsive"
+      }
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Construisons quelque chose d'épique",
+    "subtitle": "Vous avez une vision ? J'ai les outils pour la concrétiser.",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "namePlaceholder": "Jean Dupont",
+    "emailPlaceholder": "jean@exemple.com",
+    "messagePlaceholder": "Comment puis-je vous aider ?",
+    "sending": "Envoi en cours…",
+    "sendMessage": "Envoyer le message",
+    "success": "Message envoyé — merci, je vous répondrai bientôt.",
+    "socialPresence": "Réseaux sociaux",
+    "location": "Localisation",
+    "locationValue": "Télétravail / Pontivy, France",
+    "errors": {
+      "requiredFields": "Tous les champs sont requis.",
+      "invalidRequest": "Requête invalide.",
+      "serverError": "Impossible de joindre le serveur. Réessayez plus tard."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Thibault NICOLAS."
+  }
+}

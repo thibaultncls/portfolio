@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "title": "Thibault Nicolas",
+    "description": "Thibault Nicolas' Portfolio"
+  },
+  "navbar": {
+    "title": "Thibault NICOLAS' Portfolio",
+    "hero": "Hero",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "resume": "Resume",
+    "resumeHref": "/cv-en.pdf"
+  },
+  "hero": {
+    "badge": "Available for new opportunities",
+    "title": "Building <highlight>Tomorrow's</highlight> Experiences",
+    "description": "Full-stack & Mobile Developer crafting high-end digital solutions with a focus on performance, scalability, and editorial design.",
+    "ctaWork": "View my work",
+    "ctaContact": "Contact me",
+    "imageAlt": "Abstract glowing circuit board and network lines tech visual"
+  },
+  "skills": {
+    "label": "Capabilities",
+    "title": "The Tech Ecosystem",
+    "subtitle": "Leveraging modern tools to build efficient, scalable, and user-centric applications across all platforms.",
+    "categories": {
+      "frontend": {
+        "title": "Frontend Engineering"
+      },
+      "backend": {
+        "title": "Backend & APIs"
+      },
+      "mobile": {
+        "title": "Mobile Development"
+      },
+      "tools": {
+        "title": "Tools & Infrastructure"
+      }
+    }
+  },
+  "projects": {
+    "label": "Portfolio",
+    "title": "Selected Artifacts",
+    "viewProject": "View project",
+    "items": {
+      "strongly": {
+        "title": "Strongly",
+        "description": "A premium fitness application designed to create, track, and optimize workouts. Built with an offline-first architecture, it features advanced workout templates, real-time synchronization, and a full subscription system powered by RevenueCat. Focused on performance, scalability, and a high-end user experience.",
+        "imageAlt": "Strongly fitness app with workout tracking, templates and performance analytics"
+      },
+      "cookit": {
+        "title": "Cookit",
+        "description": "A recipe web application built with React to deliver a clean, responsive, and intuitive cooking experience. Users can explore recipes through a modern interface designed with a strong focus on usability, performance, and frontend architecture.",
+        "imageAlt": "Cookit React recipe application showcasing a modern and responsive cooking interface"
+      },
+      "muscleTrack": {
+        "title": "Muscle Track",
+        "description": "A mobile application built with Flutter to track your muscle progress. It allows you to add your exercises, sets, and reps, and to see your progress over time.",
+        "imageAlt": "Muscle Track mobile application showcasing a modern and responsive muscle tracking interface"
+      },
+      "seniorBretagne": {
+        "title": "Senior Bretagne",
+        "description": "A modern and accessible website designed for Conseils & Gestion, a company providing home accessibility solutions for seniors, including stairlifts, walk-in showers, and personal emergency systems. Built with WordPress and custom themes, it features a clean, responsive design and a focus on usability and accessibility.",
+        "imageAlt": "Senior Bretagne web application showcasing a modern and responsive website interface"
+      }
+    }
+  },
+  "contact": {
+    "label": "Connection",
+    "title": "Let's build something epic",
+    "subtitle": "Have a vision? I have the tools to make it a reality.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "namePlaceholder": "John Doe",
+    "emailPlaceholder": "john@example.com",
+    "messagePlaceholder": "How can I help you?",
+    "sending": "Sending…",
+    "sendMessage": "Send Message",
+    "success": "Message sent — thank you, I will reply soon.",
+    "socialPresence": "Social Presence",
+    "location": "Location",
+    "locationValue": "Remote / Pontivy, France",
+    "errors": {
+      "requiredFields": "All fields are required.",
+      "invalidRequest": "Invalid request.",
+      "serverError": "Unable to reach the server. Please try again later."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Thibault NICOLAS."
+  }
+}

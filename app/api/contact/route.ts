@@ -9,7 +9,7 @@ export async function POST(request: Request) {
 
     if (!name || !email || !message) {
       return NextResponse.json(
-        { error: "Tous les champs sont requis." },
+        { error: "requiredFields" },
         { status: 400 },
       );
     }
@@ -30,11 +30,11 @@ ${message}
 
     if (error) {
       console.log("error", error);
-      return NextResponse.json({ error: error.message }, { status: 500 });
+      return NextResponse.json({ error: "serverError" }, { status: 500 });
     }
 
     return NextResponse.json({ success: true });
   } catch {
-    return NextResponse.json({ error: "Requête invalide." }, { status: 400 });
+    return NextResponse.json({ error: "invalidRequest" }, { status: 400 });
   }
 }
