@@ -14,8 +14,8 @@
   },
   "hero": {
     "badge": "Disponible pour de nouvelles opportunités",
-    "title": "Construire les expériences de <highlight>demain</highlight>",
-    "description": "Développeur Full-stack & Mobile, je conçois des solutions digitales haut de gamme avec un focus sur la performance, la scalabilité et le design éditorial.",
+    "title": "Je conçois des applications utiles, pensées <highlight>pour durer</highlight>.",
+    "description": "Développeur Full-Stack & Mobile, je conçois des applications modernes en mettant l'accent sur la performance, la qualité du code et l'expérience utilisateur.",
     "ctaWork": "Voir mes projets",
     "ctaContact": "Me contacter",
     "imageAlt": "Visuel technologique abstrait avec circuits lumineux et réseau"
@@ -23,7 +23,7 @@
   "skills": {
     "label": "Compétences",
     "title": "L'écosystème technique",
-    "subtitle": "Exploiter les outils modernes pour créer des applications efficaces, scalables et centrées utilisateur sur toutes les plateformes.",
+    "subtitle": "Créer des applications performantes, évolutives et pensées pour offrir la meilleure expérience utilisateur sur toutes les plateformes.",
     "categories": {
       "frontend": {
         "title": "Frontend Engineering"
@@ -46,7 +46,7 @@
     "items": {
       "strongly": {
         "title": "Strongly",
-        "description": "Une application fitness premium conçue pour créer, suivre et optimiser ses entraînements. Construite avec une architecture offline-first, elle propose des templates d'entraînement avancés, une synchronisation en temps réel et un système d'abonnement complet via RevenueCat. Orientée performance, scalabilité et expérience utilisateur haut de gamme.",
+        "description": "Strongly est une application de suivi d'entraînement développée en Flutter. Elle permet de créer des programmes personnalisés, d'enregistrer chaque séance et de suivre sa progression. Conçue selon une approche offline-first, elle synchronise automatiquement les données, intègre un système d'abonnement avec RevenueCat et met l'accent sur les performances, la fiabilité et une expérience utilisateur fluide.",
         "imageAlt": "Application fitness Strongly avec suivi d'entraînement, templates et analytics de performance"
       },
       "cookit": {
@@ -61,7 +61,7 @@
       },
       "seniorBretagne": {
         "title": "Senior Bretagne",
-        "description": "Un site web moderne et accessible pour Conseils & Gestion, entreprise proposant des solutions d'accessibilité à domicile pour seniors : monte-escaliers, douches à l'italienne et systèmes d'alerte. Construit avec WordPress et thèmes sur mesure, il mise sur un design épuré, responsive, l'ergonomie et l'accessibilité.",
+        "description": "Un site web moderne et accessible pour Conseils & Gestion, une entreprise proposant des solutions d'accessibilité à domicile pour seniors : monte-escaliers, douches à l'italienne et systèmes d'alerte. Construit avec WordPress et thèmes sur mesure, il mise sur un design épuré, responsive, l'ergonomie et l'accessibilité.",
         "imageAlt": "Site Senior Bretagne, interface web moderne et responsive"
       }
     }
@@ -81,7 +81,7 @@
     "success": "Message envoyé — merci, je vous répondrai bientôt.",
     "socialPresence": "Réseaux sociaux",
     "location": "Localisation",
-    "locationValue": "Télétravail / Pontivy, France",
+    "locationValue": "Télétravail / Le Puy-en-Velay, France",
     "errors": {
       "requiredFields": "Tous les champs sont requis.",
       "invalidRequest": "Requête invalide.",
